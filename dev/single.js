@@ -23,13 +23,13 @@ function goNextItem(){
 		nextItem = 0;
 	}
 
-	TweenLite.to(document.querySelectorAll('.unItem')[currentItem], 0.8, {x:'100%', ease:Power4.easeInOut});
-	TweenLite.to(document.querySelectorAll('.unItem')[currentItem].querySelector('div'), 0.8, {x:'-90%', ease:Power4.easeInOut});
+	TweenMax.to(document.querySelectorAll('.unItem')[currentItem], 0.8, {x:'100%', ease:Power4.easeInOut});
+	TweenMax.to(document.querySelectorAll('.unItem')[currentItem].querySelector('div'), 0.8, {x:'-90%', ease:Power4.easeInOut});
 
 	document.querySelectorAll('.unItem')[nextItem].style.zIndex = zInd++;
 
-	TweenLite.fromTo(document.querySelectorAll('.unItem')[nextItem], 0.8, {x:'-100%'}, {x:'0%', ease:Power4.easeInOut});
-	TweenLite.fromTo(document.querySelectorAll('.unItem')[nextItem].querySelector('div'), 0.8, {x:'90%'}, {x:'0%', ease:Power4.easeInOut, onComplete:function(){
+	TweenMax.fromTo(document.querySelectorAll('.unItem')[nextItem], 0.8, {x:'-100%'}, {x:'0%', ease:Power4.easeInOut});
+	TweenMax.fromTo(document.querySelectorAll('.unItem')[nextItem].querySelector('div'), 0.8, {x:'90%'}, {x:'0%', ease:Power4.easeInOut, onComplete:function(){
 		if(nextItem === 0){
 			currentItem = 0;
 		}else{
@@ -50,7 +50,7 @@ function goNextItem(){
 		document.querySelectorAll('.c-single-slider-nav__item')[0].classList.add('is-active');
 	}
 
-	TweenLite.to('#tailleFixed span', 0.2, {y:'-100%', ease:Power2.easeIn}, 0.1, finNombre);
+	TweenMax.staggerTo('#tailleFixed span', 0.2, {y:'-100%', ease:Power2.easeIn}, 0.1, finNombre);
 }
 
 
@@ -64,13 +64,13 @@ function goPrevItem(){
 		nextItem = document.querySelectorAll('.unItem').length - 1;
 	}
 
-	TweenLite.to(document.querySelectorAll('.unItem')[currentItem], 0.8, {x:'-100%', ease:Power4.easeInOut});
-	TweenLite.to(document.querySelectorAll('.unItem')[currentItem].querySelector('div'), 0.8, {x:'90%', ease:Power4.easeInOut});
+	TweenMax.to(document.querySelectorAll('.unItem')[currentItem], 0.8, {x:'-100%', ease:Power4.easeInOut});
+	TweenMax.to(document.querySelectorAll('.unItem')[currentItem].querySelector('div'), 0.8, {x:'90%', ease:Power4.easeInOut});
 
 	document.querySelectorAll('.unItem')[nextItem].style.zIndex = zInd++;
 
-	TweenLite.fromTo(document.querySelectorAll('.unItem')[nextItem], 0.8, {x:'100%'}, {x:'0%', ease:Power4.easeInOut});
-	TweenLite.fromTo(document.querySelectorAll('.unItem')[nextItem].querySelector('div'), 0.8, {x:'-90%'}, {x:'0%', ease:Power4.easeInOut, onComplete:function(){
+	TweenMax.fromTo(document.querySelectorAll('.unItem')[nextItem], 0.8, {x:'100%'}, {x:'0%', ease:Power4.easeInOut});
+	TweenMax.fromTo(document.querySelectorAll('.unItem')[nextItem].querySelector('div'), 0.8, {x:'-90%'}, {x:'0%', ease:Power4.easeInOut, onComplete:function(){
 		if(nextItem === document.querySelectorAll('.unItem').length - 1){
 			currentItem = document.querySelectorAll('.unItem').length - 1;
 		}else{
@@ -92,7 +92,7 @@ function goPrevItem(){
 		document.querySelectorAll('.c-single-slider-nav__item')[document.querySelectorAll('.c-single-slider-nav__item').length-1].classList.add('is-active');
 	}
 
-	TweenLite.to('#tailleFixed span', 0.2, {y:'100%', ease:Power2.easeIn}, 0.1, finNombre2);
+	TweenMax.staggerTo('#tailleFixed span', 0.2, {y:'100%', ease:Power2.easeIn}, 0.1, finNombre2);
 }
 
 
@@ -103,7 +103,7 @@ function finNombre(){
 	}else{
 		document.getElementById('chiffre2').innerHTML = currentItem+2;
 	}
-	TweenLite.staggerFromTo('#tailleFixed span', 0.2, {y:'100%'}, {y:'0%', ease:Power2.easeOut}, 0.1);
+	TweenMax.staggerFromTo('#tailleFixed span', 0.2, {y:'100%'}, {y:'0%', ease:Power2.easeOut}, 0.1);
 }
 
 
@@ -114,7 +114,7 @@ function finNombre2(){
 	}else{
 		document.getElementById('chiffre2').innerHTML = currentItem;
 	}
-	TweenLite.staggerFromTo('#tailleFixed span', 0.2, {y:'-100%'}, {y:'0%', ease:Power2.easeOut}, 0.1);
+	TweenMax.staggerFromTo('#tailleFixed span', 0.2, {y:'-100%'}, {y:'0%', ease:Power2.easeOut}, 0.1);
 }
 
 
